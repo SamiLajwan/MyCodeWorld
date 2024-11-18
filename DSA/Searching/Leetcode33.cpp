@@ -1,3 +1,5 @@
+// Search in a rotated array after finding pivot index.
+
 #include <iostream>
 #include <vector>
 #include<algorithm>
