@@ -1,14 +1,10 @@
-#include<iostream>
-#include<algorithm>
-#include<climits>
-using namespace std;
-
- int divide(int dividendx, int divisorx)
+class Solution
+{
+public:
+    int divide(int dividendx, int divisorx)
     {
-        int maxVal = INT_MAX;
-        int minValue = INT_MIN;
-        if (dividendx == minValue && divisorx == -1)
-            return maxVal;
+        if (dividendx == INT_MIN && divisorx == -1)
+            return INT_MAX;
 
         bool ans_pos_sign = true; // kya final ans pos hai?
         if (dividendx < 0 && divisorx > 0)
@@ -41,12 +37,4 @@ using namespace std;
             return -ans;
         return ans;
     }
-
-int main(){
-    int dividendx = -784654638;
-    int divisorx = -1;
-
-    int ans1 = divide(dividendx, divisorx);
-    cout << "Final ans: " << ans1 << endl;
-    return 0;
-}
+};
