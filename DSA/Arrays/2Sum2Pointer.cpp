@@ -7,18 +7,19 @@ bool TwoSum2PointerApproach(int arr[], int n, int x){
     int h = n-1;
 
     while(l<h){
-        int csum = arr[l] + arr[h];
-        if(csum == x) 
+        int currsum = arr[l] + arr[h];
+        if(currsum == x) 
         return true;
 
         //if csum is grrater than X, it means current pair is too larger.
         // we have to mve the high index to right to consider smaller pair.
-        else if(csum > x) 
+        else if(currsum > x) 
         h--;
 
         //if csum is lower than X, it means current pair is too smaller.
         // we have to mve the low index to right to consider larger pair.
-        else l++;
+        else 
+        l++;
 
     }
     return false;
