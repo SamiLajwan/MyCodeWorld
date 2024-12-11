@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "${workspaceFolder}",  // Use the workspace folder as the current working directory
+      "program": "${workspaceFolder}\\build\\Debug\\outDebug",  // Path to the compiled executable
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
