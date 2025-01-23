@@ -1,4 +1,5 @@
-// sieve of eratosthenes Theorem for count prime
+#include <vector>
+using namespace std;
 
 class Solution {
 public:
@@ -21,5 +22,21 @@ public:
             }
         }
         return primeCount;
-    }    
+    }
+
+    vector<int> generatePrimes(int n) {
+        vector<bool> prime(n, true);
+        prime[0] = prime[1] = false;
+        vector<int> primes;
+
+        for(int i = 2; i < n; i++) {
+            if(prime[i]) {
+                primes.push_back(i);
+                for(int j = 2 * i; j < n; j += i) {
+                    prime[j] = false;
+                }
+            }
+        }
+        return primes;
+    }
 };
