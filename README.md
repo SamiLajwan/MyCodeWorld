@@ -1,2 +1,0 @@
-# MyCodeWorld
-My Journey 
