@@ -63,7 +63,7 @@ void print(Node* head){
     Node* temp = head;
     //jab tak mera temp null ke equal nhi hota, tab tak node print karte raho
     while(temp!=NULL){
-        cout<<"["<< temp->data << "][ ]"<<"-->";
+        cout<< temp->data<<"-->";
         temp = temp->next;
     }
     cout << "NULL" << endl;
@@ -160,18 +160,17 @@ int main(){
     Node* tail = NULL;
 
     insertAtHead(10, head, tail);
-    // print(head);
-    insertAtHead(20, head, tail);
-    // print(head);
-    insertAtHead(30, head, tail);
-    // print(head);
 
+    insertAtHead(20, head, tail);
+ 
+    insertAtHead(30, head, tail);
+    print(head);
     // insertAtTail(101, head, tail);
     // print(head);
     // insertAtTail(102, head, tail);
     // print(head);
     // insertAtTail(103, head, tail);
-    print(head);
+    // print(head);
 
     insertAtPosition(1, 42, head, tail);
     print(head);
@@ -185,10 +184,10 @@ int main(){
     cout<< searchinLL(142, head); // search.
 
     deleteNodeFromLL(1, head, tail);
-    print(head);
+    // print(head);
     deleteNodeFromLL(3, head, tail);
-    print(head);
+    // print(head);
     deleteNodeFromLL(4, head, tail);
-    print(head);
+    // print(head);
     return 0;
 }
