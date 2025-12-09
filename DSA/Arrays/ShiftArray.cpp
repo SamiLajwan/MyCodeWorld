@@ -13,9 +13,7 @@ void rotateArray(int arr[], int size, int shift){
     int temp[10000];
     int index = 0;
     for(int i=size-finalShift ; i<size; i++){
-        temp[index] = arr[i];
-        index++;
-    
+        temp[index++] = arr[i];
     }
 
     //step2: shift array elements by finalshift places
