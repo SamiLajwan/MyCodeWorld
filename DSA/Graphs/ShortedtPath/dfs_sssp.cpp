@@ -52,8 +52,8 @@ class Graph{
         src = topoOrder.top();
         topoOrder.pop();
         dist[src]=0;
-        //and src ke neighbour k min distance ko update krte ho
         
+        //and src ke neighbour k min distance ko update krte ho
         for(auto nbr: adj[src]){
             //nbr ->{a,b}
             //a->node, b->wt
