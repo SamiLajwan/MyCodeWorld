@@ -11,13 +11,13 @@ bool TwoSum2PointerApproach(int arr[], int n, int x){
         if(currsum == x) 
         return true;
 
-        //if csum is grrater than X, it means current pair is too larger.
-        // we have to mve the high index to right to consider smaller pair.
+        //if csum is greater than X, it means current pair is too large.
+        // we have to move the high index to left to consider smaller pair.
         else if(currsum > x) 
         h--;
 
-        //if csum is lower than X, it means current pair is too smaller.
-        // we have to mve the low index to right to consider larger pair.
+        //if csum is lower than X, it means current pair is too small.
+        // we have to move the low index to right to consider larger pair.
         else 
         l++;
 
@@ -28,7 +28,7 @@ bool TwoSum2PointerApproach(int arr[], int n, int x){
 int main()
 {
     int arr[] = {1,6,4,10,8,45};
-    int n = 6;
+    int n = sizeof(arr)/sizeof(arr[0]);
     int x = 16;
     sort(arr , arr + n);
     bool ans =  TwoSum2PointerApproach(arr, n, x);
