@@ -31,11 +31,11 @@ int main(){
 
     // search or find
     // count() and find()
-    if(uMap.find(1) == uMap.end()){
-        cout << "1 nhi mila " << endl;
+    if(uMap.find(1) != uMap.end()){
+        cout << "1 mil gya " << endl;
     }
     else{
-        cout << "found 1" << endl;
+        cout << " not found 1" << endl;
     }
 
     if(uMap.count(30) == 0){
