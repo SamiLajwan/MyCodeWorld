@@ -1,49 +1,50 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
 // Base class for Single Inheritance
 class Employee{
 protected:
-    std::string name;
+    string name;
     int employeeId;
 
 public:
-    Employee(const std::string &empName, int empId) : name(empName), employeeId(empId){
-        std::cout << __FUNCTION__ << std::endl;
+    Employee(const string &empName, int empId) : name(empName), employeeId(empId){
+        cout << __FUNCTION__ << endl;
     }
 
     void display() const{
-        std::cout << "Employee: " << name << ", ID: " << employeeId << std::endl;
+        cout << "Employee: " << name << ", ID: " << employeeId << endl;
     }
 };
 
 // Derived class for Single Inheritance
 class Developer : public Employee{
 private:
-    std::string programmingLanguage;
+    string programmingLanguage;
 
 public:
-    Developer(const std::string &empName, int empId, const std::string &lang)
+    Developer(const string &empName, int empId, const string &lang)
         : Employee(empName, empId){
         this->programmingLanguage = lang;
     }
 
     void show() const{
         display();
-        std::cout << "Specialization: Developer, Programming Language: " << programmingLanguage << std::endl;
+        cout << "Specialization: Developer, Programming Language: " << programmingLanguage << endl;
     }
 };
 
 // Base classes for Multiple Inheritance
 class ProjectManager{
 protected:
-    std::string projectManaged;
+    string projectManaged;
 
 public:
-    ProjectManager(const std::string &project) : projectManaged(project) {}
+    ProjectManager(const string &project) : projectManaged(project) {}
 
     void manageProject() const{
-        std::cout << "Project Manager managing project: " << projectManaged << std::endl;
+        cout << "Project Manager managing project: " << projectManaged << endl;
     }
 };
 
@@ -55,14 +56,14 @@ public:
     TeamLead(int size) : teamSize(size) {}
 
     void leadTeam() const{
-        std::cout << "Team Lead leading a team of " << teamSize << " members." << std::endl;
+        cout << "Team Lead leading a team of " << teamSize << " members." << endl;
     }
 };
 
 // Derived class for Multiple Inheritance
 class TechLead : public Employee, public ProjectManager, public TeamLead{
 public:
-    TechLead(const std::string &empName, int empId, const std::string &project, int teamSize)
+    TechLead(const string &empName, int empId, const string &project, int teamSize)
         : Employee(empName, empId), ProjectManager(project), TeamLead(teamSize) {}
 
     void displayInfo() const{
@@ -75,76 +76,76 @@ public:
 // Base class for Multi-level Inheritance
 class HRManager : public Employee{
 public:
-    HRManager(const std::string &empName, int empId) : Employee(empName, empId){
-        std::cout << __FUNCTION__ << std::endl;
+    HRManager(const string &empName, int empId) : Employee(empName, empId){
+        cout << __FUNCTION__ << endl;
     }
 
     void handleHRDuties() const{
-        std::cout << "HR Manager handling human resources duties." << std::endl;
+        cout << "HR Manager handling human resources duties." << endl;
     }
 };
 
 // Derived class for Multi-level Inheritance
 class HRDirector : public HRManager{
 public:
-    HRDirector(const std::string &empName, int empId) : HRManager(empName, empId){
-        std::cout << __FUNCTION__ << std::endl;
+    HRDirector(const string &empName, int empId) : HRManager(empName, empId){
+        cout << __FUNCTION__ << endl;
     }
 
     void manageHRDepartment() const{
-        std::cout << "HR Director managing the HR department." << std::endl;
+        cout << "HR Director managing the HR department." << endl;
     }
 };
 
 // Base class for Hierarchical Inheritance
 class Executive : public Employee{
 public:
-    Executive(const std::string &empName, int empId) : Employee(empName, empId) {}
+    Executive(const string &empName, int empId) : Employee(empName, empId) {}
 
     void makeExecutiveDecisions() const{
-        std::cout << "Executive making executive decisions." << std::endl;
+        cout << "Executive making executive decisions." << endl;
     }
 };
 
 // Derived classes for Hierarchical Inheritance
 class CEO : public Executive{
 public:
-    CEO(const std::string &empName, int empId) : Executive(empName, empId) {}
+    CEO(const string &empName, int empId) : Executive(empName, empId) {}
 
     void leadCompany() const{
         makeExecutiveDecisions();
-        std::cout << "CEO leading the company." << std::endl;
+        cout << "CEO leading the company." << endl;
     }
 };
 
 // Base classes for Hybrid Inheritance
 class MarketingManager : public Employee{
 public:
-    MarketingManager(const std::string &empName, int empId) : Employee(empName, empId) {}
+    MarketingManager(const string &empName, int empId) : Employee(empName, empId) {}
 
     void createMarketingStrategy() const{
-        std::cout << "Marketing Manager creating a marketing strategy." << std::endl;
+        cout << "Marketing Manager creating a marketing strategy." << endl;
     }
 };
 
 class SalesManager : public Employee{
 public:
-    SalesManager(const std::string &empName, int empId) : Employee(empName, empId) {}
+    SalesManager(const string &empName, int empId) : Employee(empName, empId) {}
 
     void boostSales() const{
-        std::cout << "Sales Manager boosting sales." << std::endl;
+        cout << "Sales Manager boosting sales." << endl;
     }
 };
 
 class BusinessDevelopmentManager : public MarketingManager, public SalesManager{
 public:
-    BusinessDevelopmentManager(const std::string &empName, int empId)
+    BusinessDevelopmentManager(const string &empName, int empId)
         : MarketingManager(empName, empId), SalesManager(empName, empId) {}
 
     void coordinateBusinessDevelopment() const{
         createMarketingStrategy();
         boostSales();
-        std::cout << "Business Development Manager coordinating business development efforts." << std::endl;
+        cout << "Business Development Manager coordinating business development efforts." << endl;
     }
 };
 
